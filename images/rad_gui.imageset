@@ -1,0 +1,44 @@
+ImageSetClass {
+ Name "rad_gui"
+ RefSize 64 352
+ Textures {
+  ImageSetTextureClass {
+   mpix 1
+   path "{479538913596E46E}RadiationMod/images/rad_gui.edds"
+  }
+ }
+ Images {
+  ImageSetDefClass RadiationIcon0 {
+   Name "RadiationIcon0"
+   Pos -2 0
+   Size 68 66
+   Flags 3
+  }
+  ImageSetDefClass RadiationIcon1 {
+   Name "RadiationIcon1"
+   Pos -2 72
+   Size 68 66
+   Flags 3
+  }
+  ImageSetDefClass RadiationIcon2 {
+   Name "RadiationIcon2"
+   Pos -2 144
+   Size 68 66
+   Flags 3
+  }
+  ImageSetDefClass RadiationIcon3 {
+   Name "RadiationIcon3"
+   Pos -2 216
+   Size 68 66
+   Flags 3
+  }
+  ImageSetDefClass RadiationIcon4 {
+   Name "RadiationIcon4"
+   Pos -2 288
+   Size 68 66
+   Flags 3
+  }
+ }
+ Groups {
+ }
+}
