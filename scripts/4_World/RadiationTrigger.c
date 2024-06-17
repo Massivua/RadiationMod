@@ -39,9 +39,10 @@ class RadiationTrigger : ManTrigger
                
                string playername = player.GetIdentity().GetName();
                string steamid = player.GetIdentity().GetPlainId();
+               int resist = player.GetRadiationResist();
                string name = m_Name;
 
-               Print("[RadiationMod] Игрок \"" + playername + "\" (steamid=" + steamid + ") вошел в: \"" + name + "\"");
+               Print("[RadiationMod] Игрок \"" + playername + "\" (steamid=" + steamid + ") вошел в: \"" + name + "\" с защитой от радиации: " + resist + "%");
 
                RadiationManager.Get().EnterRadiationZone(player, m_RadiationBackground);
           }

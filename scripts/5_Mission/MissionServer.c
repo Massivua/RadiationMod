@@ -1,18 +1,16 @@
 modded class MissionServer
 {
-    static ref RadiationMod g_gRadiationMod;
-
     override void OnInit()
     {
         super.OnInit();
         InitRadiationMod();
         InitRadiationManager();
+        InitResistManager();  
     }
 
     static void InitRadiationMod()
     {
-        g_gRadiationMod = new RadiationMod();
-        g_gRadiationMod.RegisterTriggers();
+        RadiationMod.Get().RegisterTriggers();
 
         Print("[RadiationMod] Initialised");
     }
@@ -22,5 +20,12 @@ modded class MissionServer
         RadiationManager.Get();
 
         Print("[RadiationManager] Initialised");
+    }
+
+    static void InitResistManager()
+    {
+        ResistManager.Get().LoadResistValues();
+
+        Print("[ResistManager] Initialised");
     }
 }

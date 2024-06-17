@@ -1,11 +1,21 @@
 class RadiationMod
 {
+    private static ref RadiationMod s_Instance;
     ref array<ref RadiationTriggerConfig> RadiationTriggers;
 
     void RadiationMod()
     {
         RadiationTriggers = new array<ref RadiationTriggerConfig>;
         LoadTriggers();
+    }
+
+    static RadiationMod Get()
+    {
+        if (!s_Instance)
+        {
+            s_Instance = new RadiationMod();
+        }
+        return s_Instance;
     }
 
     void LoadTriggers()
@@ -15,12 +25,12 @@ class RadiationMod
 
         if (FileExist(filePath + fileName))
         {
-            JsonFileLoader<RadiationMod>.JsonLoadFile(filePath + fileName, this);
+            JsonFileLoader<array<ref RadiationTriggerConfig>>.JsonLoadFile(filePath + fileName, RadiationTriggers);
         }
         else
         {
             CreateDefaultConfig(filePath, fileName);
-            JsonFileLoader<RadiationMod>.JsonLoadFile(filePath + fileName, this);
+            JsonFileLoader<array<ref RadiationTriggerConfig>>.JsonLoadFile(filePath + fileName, RadiationTriggers);
         }
     }
 
@@ -28,9 +38,12 @@ class RadiationMod
     {
         MakeDirectoryPath(filePath);
 
-        RadiationTriggers.Insert(new RadiationTriggerConfig("Тестовый триггер радиации 100 метров", "130 0 1555", "100 20 100", 100));
-
-        JsonFileLoader<RadiationMod>.JsonSaveFile(filePath + fileName, this);
+        RadiationTriggers.Insert(new RadiationTriggerConfig("Тестовый триггер радиации 100", "130 0 1555", "100 20 100", 100));
+        RadiationTriggers.Insert(new RadiationTriggerConfig("Тестовый триггер радиации 200", "230 0 1555", "100 20 100", 200));
+        RadiationTriggers.Insert(new RadiationTriggerConfig("Тестовый триггер радиации 300", "330 0 1555", "100 20 100", 300));
+        RadiationTriggers.Insert(new RadiationTriggerConfig("Тестовый триггер радиации 1000", "430 0 1555", "50 20 50", 1000));
+        
+        JsonFileLoader<array<ref RadiationTriggerConfig>>.JsonSaveFile(filePath + fileName, RadiationTriggers);
     }
 
     void MakeDirectoryPath(string path)
