@@ -19,9 +19,9 @@ class RadiationTrigger : ManTrigger
      string m_Name;
      int m_RadiationBackground;
 
-     void SetTriggerName(string Name)
+     void SetTriggerName(string name)
      {
-          m_Name = Name;
+          m_Name = name;
      }
 
      void SetRadiationBackground(int radiationBackground)

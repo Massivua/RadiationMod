@@ -40,7 +40,7 @@ class CfgMods
             class missionScriptModule
             {
                 value = "";
-                files[] = {"RadiationMod/scripts/5_Mission"};
+                files[] = {"RadiationMod/scripts/5_Mission",};
             };
             class worldScriptModule
             {

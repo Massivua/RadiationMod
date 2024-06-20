@@ -38,10 +38,10 @@ class RadiationMod
     {
         MakeDirectoryPath(filePath);
 
-        RadiationTriggers.Insert(new RadiationTriggerConfig("Тестовый триггер радиации 100", "130 0 1555", "100 20 100", 100));
-        RadiationTriggers.Insert(new RadiationTriggerConfig("Тестовый триггер радиации 200", "230 0 1555", "100 20 100", 200));
-        RadiationTriggers.Insert(new RadiationTriggerConfig("Тестовый триггер радиации 300", "330 0 1555", "100 20 100", 300));
-        RadiationTriggers.Insert(new RadiationTriggerConfig("Тестовый триггер радиации 1000", "430 0 1555", "50 20 50", 1000));
+        RadiationTriggers.Insert(new RadiationTriggerConfig("Тестовый триггер радиации 100", "130 0 1555", "50 50 50", 100));
+        RadiationTriggers.Insert(new RadiationTriggerConfig("Тестовый триггер радиации 200", "230 0 1555", "50 50 50", 200));
+        RadiationTriggers.Insert(new RadiationTriggerConfig("Тестовый триггер радиации 300", "330 0 1555", "50 50 50", 300));
+        RadiationTriggers.Insert(new RadiationTriggerConfig("Тестовый триггер радиации 1000", "430 0 1555", "50 50 50", 1000));
         
         JsonFileLoader<array<ref RadiationTriggerConfig>>.JsonSaveFile(filePath + fileName, RadiationTriggers);
     }

@@ -3,11 +3,14 @@ modded class MissionServer
     override void OnInit()
     {
         super.OnInit();
-        InitRadiationMod();
+        
         InitRadiationManager();
-        InitResistManager();  
-    }
+        InitResistManager(); 
+        InitRadiationCureManager(); 
 
+        InitRadiationMod();
+    }
+    
     static void InitRadiationMod()
     {
         RadiationMod.Get().RegisterTriggers();
@@ -27,5 +30,12 @@ modded class MissionServer
         ResistManager.Get().LoadResistValues();
 
         Print("[ResistManager] Initialised");
+    }
+
+     static void InitRadiationCureManager()
+    {
+        RadiationCureManager.Get().LoadCureValues();
+
+        Print("[RadiationCureManager] Initialised");
     }
 }
